@@ -9,30 +9,37 @@ public class indefinite {
 //        int arr[];
 //        arr = new int[n];
 
-        int i = 1;
-        int j = 0;
-        int arr[] = new int[i];
+        int size1 = 1; //size of array one
+        int size2 = 0; //size to be added to array two
+        
+        int array1[] = new int[size1];
         Scanner in = new Scanner(System.in);
         int x = in.nextInt();
         
         while (x != -1) {
-            if (j == arr.length) {
-                int brr[] = new int[i + j];
-                for (int z = 0; z < j; z++) {
-                    brr[z] = arr[z];
-                }
-                arr = brr;
-            }
-            arr[j] = x;
-            x = in.nextInt();
-            i++;
-            j++;
-        }
+            if (size2 == array1.length) {
+                int array2[] = new int[size1 + size2];
+                System.arraycopy(array1, 0,array2, 0, array1.length);  //Copy from one array to another
+            
+//              for (int i = 0; i < arr.length; i++) {
+//                  brr[i] = arr[i];
+//              }
 
-        for (int q = 0; q < arr.length; q++) {
-            if(arr[q]==0) break;
-            System.out.print(arr[q]);
+                array1 = array2;
+                size1++;                
+            }
+            array1[size1 - 1] = x;
+            x = in.nextInt();
+            size2++;  
+        }
+        
+        //printing the elements of the array
+        
+        for (int i = 0; i < array1.length; i++) {
+            //if(arr[i]==0 && arr[i]==0) break;
+            System.out.print(array1[i]);
             System.out.println();
         }
     }
 }
+
