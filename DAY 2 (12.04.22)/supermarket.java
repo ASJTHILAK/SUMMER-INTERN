@@ -12,8 +12,8 @@ class Fruits {
 class Apple extends Fruits {
     Apple(){
         rate = 50;
-        discount = 3;
-        offer = 1;
+        discount = 3; // BUY 3
+        offer = 1;    // GET 1
     }
     public double amount(String a,String b){
         b = b.replaceAll("\\D","");
