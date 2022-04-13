@@ -68,8 +68,8 @@ class Veg extends Produce{
 class Potato extends Veg {
     Potato(){
         rate = 30;
-        discount = 5; // BUY 3
-        offer = 2;    // GET 1
+        discount = 5; // BUY 5
+        offer = 2;    // GET 2
     }
     public double amount(String a,String b){
         b = b.replaceAll("\\D","");
