@@ -56,7 +56,32 @@ class normal extends abs1{
     }
 }
 
+class stringTypes{
+    
+    public static void concat(String s1)
+    {
+        s1 = s1 + " SUPER KINGS";
+    }
+ 
+    protected static void concat(StringBuffer s2)
+    {
+        s2.append(" SUPER KINGS");
+    }
+    
+    private static void concat(StringBuilder s3)
+    {
+        s3.append(" SUPER KINGS");
+    }
+    
+    static void callPrivate(StringBuilder s3){
+        concat(s3);
+        System.out.println("Private method is called by another method inside the class");
+    }
+}
+
 public class MinTasks implements heritance,inheritance {
+    
+    
     public static void main(String[] args) {
         
         abs1 obj = new normal();
@@ -80,5 +105,22 @@ public class MinTasks implements heritance,inheritance {
         MinTasks obj1 = new MinTasks();
         obj1.show();
         obj1.print();
+        
+        //String
+        String s1 = "CHENNAI";
+        stringTypes.concat(s1);
+        System.out.println("String: " + s1);
+ 
+        //StringBuffer
+        StringBuffer s2 = new StringBuffer("CHENNAI");
+        stringTypes.concat(s2);
+        System.out.println("StringBuffer: " + s2);
+        
+        //StringBuilder
+        StringBuilder s3 = new StringBuilder("CHENNAI");
+        //stringTypes.concat(s3); // The Method won't be called since it is Private
+        stringTypes.callPrivate(s3);
+        System.out.println("StringBuilder: " + s3);
+        
     }
 }
