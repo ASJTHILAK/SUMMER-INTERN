@@ -5,7 +5,7 @@ public class indefinite {
 
     public static void main(String[] args) {
 
-//        int n = Integer.MAX_VALUE - 4;
+//        int n = Integer.MAX_VALUE;
 //        int arr[];
 //        arr = new int[n];
 
@@ -24,19 +24,18 @@ public class indefinite {
 //              for (int i = 0; i < arr.length; i++) {
 //                  brr[i] = arr[i];
 //              }
-
                 array1 = array2;
-                size1++;                
             }
             array1[size1 - 1] = x;
             x = in.nextInt();
+            size1++;       
             size2++;  
         }
         
         //printing the elements of the array
         
-        for (int i = 0; i < array1.length; i++) {
-            //if(arr[i]==0 && arr[i]==0) break;
+        for (int i = 0; i < (size1+size2)/2 ; i++) {
+            //if(array1[i] == null) break;
             System.out.print(array1[i]);
             System.out.println();
         }
