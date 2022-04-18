@@ -19,6 +19,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 
 PrintWriter out = response.getWriter();
 
+out.print("<h1> Connected To Servlet </h1>");	
 out.print("<h2>Welcome </h2>");
 out.println("<html>");
 out.println("<head>");
